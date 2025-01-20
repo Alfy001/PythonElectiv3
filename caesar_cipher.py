@@ -1,25 +1,25 @@
 mess = input("Enter the text you want: ")
 key = int(input("Enter the key to be added: "))
-newmess = ""  # Initialize encrypted message as an empty string
+newmess = ""  
 
 # Encryption
 for ch in mess:
-    if 'a' <= ch <= 'z':  # Handle lowercase letters
+    if 'a' <= ch <= 'z': 
         c_ord = ord(ch)
         c_ord += key
-        if c_ord > ord('z'):  # Wrap around if it goes beyond 'z'
+        if c_ord > ord('z'):  
             c_ord = ord('a') + (c_ord - ord('z') - 1)
         newch = chr(c_ord)
-    elif 'A' <= ch <= 'Z':  # Handle uppercase letters
+    elif 'A' <= ch <= 'Z': 
         c_ord = ord(ch)
         c_ord += key
-        if c_ord > ord('Z'):  # Wrap around if it goes beyond 'Z'
+        if c_ord > ord('Z'): 
             c_ord = ord('A') + (c_ord - ord('Z') - 1)
         newch = chr(c_ord)
     else:
-        # Non-alphabetical characters remain unchanged
+        
         newch = ch
-    newmess += newch  # Append the new character to newmess
+    newmess += newch  
 
 print("Encrypted text:", newmess)
 
